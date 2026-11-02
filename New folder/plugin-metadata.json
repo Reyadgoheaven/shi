@@ -1,0 +1,69 @@
+{
+    "id": "voice_effects",
+    "name": "Voice Effects",
+    "description": "Adds reverb, pitch shifting, and frequency modulation to outgoing voice calls",
+    "version": "1.0.0",
+    "author": "OpenCode",
+    "main_class": "com.hammerandchisel.libdiscord.effects.plugin.VoiceEffectsPlugin",
+    "settings_class": "com.hammerandchisel.libdiscord.effects.plugin.VoiceEffectsSettings$Settings",
+    "min_version": "1.0.0",
+    "target_abi": "armeabi-v8a,x86,x86_64,arm64-v8a",
+    "icon": "voice_effects_icon.png",
+    "category": "community",
+    "features": [
+        "pitch_shifting",
+        "frequency_modulation",
+        "reverb"
+    ],
+    "presets": [
+        {
+            "id": 0,
+            "name": "None",
+            "description": "No effects applied"
+        },
+        {
+            "id": 1,
+            "name": "Robot",
+            "description": "+1 octave pitch shift, +200 Hz ring modulation"
+        },
+        {
+            "id": 2,
+            "name": "Echo",
+            "description": "30% mix 1s decay reverb"
+        },
+        {
+            "id": 3,
+            "name": "Hall",
+            "description": "+7 semitones pitch, 50% mix 1.2s decay reverb"
+        }
+    ],
+    "effect_ranges": {
+        "pitch_shift": {
+            "min": -12,
+            "max": 12,
+            "default": 0
+        },
+        "frequency_mod": {
+            "min": 0,
+            "max": 500,
+            "default": 0
+        },
+        "reverb_mix": {
+            "min": 0.0,
+            "max": 1.0,
+            "default": 0.0
+        },
+        "reverb_decay": {
+            "min": 0.1,
+            "max": 2.0,
+            "default": 0.5
+        }
+    },
+    "system_requirements": {
+        "min_discord_version": "126021",
+        "min_android_version": "7.0",
+        "requires_root": true,
+        "requires_java_audio_backend": true
+    },
+    "changelog": "Initial release with basic pitch shifting, frequency modulation, and reverb effects. Includes four presets for easy use. Native hook to force Java audio backend."
+}
